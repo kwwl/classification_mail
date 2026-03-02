@@ -1,8 +1,8 @@
-# 🎫 Agent de Traitement Automatique de Tickets
+# Agent de Traitement Automatique de Tickets
 
 Système qui lit des emails, les classifie avec un LLM, et les organise automatiquement dans un Google Sheet.
 
-## 🚀 Ce qu'il fait
+## Ce qu'il fait
 
 1. Lit les emails non lus dans Gmail
 2. Analyse chaque email avec Groq (LLM)
@@ -11,7 +11,7 @@ Système qui lit des emails, les classifie avec un LLM, et les organise automati
 
 **Résultat :** 500 emails traités en 5 minutes, organisés par priorité avec code couleur.
 
-## 📦 Installation
+## Installation
 
 ```bash
 # Cloner le projet
@@ -25,7 +25,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### 1. Google Cloud Console
 
@@ -47,7 +47,7 @@ GOOGLE_SHEET_ID=votre_id_google_sheet
 python3 generate_token.py
 ```
 
-## 🎯 Utilisation
+## Utilisation
 
 ```bash
 python3 main.py
@@ -61,7 +61,7 @@ python3 main.py
 - Dans `mail_reader.py` ligne 119 : `"q": "is:unread"`
 - Dans `main.py` ligne 81 : `max_results=500, mark_as_read=True`
 
-## 📁 Fichiers
+## Fichiers
 
 ```
 ├── main.py              # Point d'entrée
@@ -75,7 +75,7 @@ python3 main.py
 └── requirements.txt     # Dépendances
 ```
 
-## 🎨 Résultat
+## Résultat
 
 5 feuilles dans le Google Sheet (une par catégorie) :
 - Problème technique informatique
@@ -85,11 +85,11 @@ python3 main.py
 - Bug
 
 Chaque feuille :
-- ✅ Triée par urgence (Critique → Anodine)
-- 🎨 Code couleur : 🔴 Rouge (Critique) → 🔵 Bleu (Anodine)
-- 📊 3 colonnes : Sujet | Urgence | Synthèse
+- Triée par urgence (Critique → Anodine)
+- Code couleur : 🔴 Rouge (Critique) → 🔵 Bleu (Anodine)
+- 3 colonnes : Sujet | Urgence | Synthèse
 
-## 🛠️ Dépannage rapide
+## Dépannage rapide
 
 **Erreur 400 OAuth** → Vérifier que le Client ID est type "Desktop app"
 **Erreur 403 Gmail** → Activer Gmail API dans Google Cloud
@@ -97,7 +97,7 @@ Chaque feuille :
 **Erreur 429 Groq** → Limite de tokens atteinte, attendre ou changer de modèle
 **Erreur 429 Sheets** → Rate limit, le code gère déjà avec batch updates
 
-## 📊 Performance
+## Performance
 
 - **Vitesse** : ~500 emails en 5 minutes
 - **Coût** : Gratuit (APIs Google + Groq free tier)
